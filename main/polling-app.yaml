@@ -9,10 +9,9 @@ spec:
     port: 8080
     protocol: TCP
     targetPort: 8080
-    NodePort: 30090
   selector:
     app: polling-app
-  type: NodePort
+  type: LoadBalancer
 
 
 ---
