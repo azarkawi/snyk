@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: snyk-monitor
-  namespace: snyk-monitor
 spec:
   replicas: 1
   selector:
