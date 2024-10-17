@@ -18,9 +18,6 @@ spec:
             snyk iac test flask-polling-app/argocd/polling-app.yaml || true;
         env:
           - name: SNYK_TOKEN
-            valueFrom:
-              secretKeyRef:
-                name: snyk-token
-                key: token
+            value: "3a916c3d-0284-482b-830b-3c0f05332cea"
       restartPolicy: Never
   backoffLimit: 0
