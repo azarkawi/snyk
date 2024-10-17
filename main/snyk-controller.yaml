@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: snyk-monitor
+  namespace: snyk-monitor
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: snyk-monitor
+  template:
+    metadata:
+      labels:
+        app: snyk-monitor
+    spec:
+      serviceAccountName: snyk-monitor
+      containers:
+      - name: snyk-monitor
+        image: snyk/kubernetes-monitor:latest
+        env:
+        - name: SNYK_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: snyk-token
+              key: token
+        ports:
+        - containerPort: 8080
