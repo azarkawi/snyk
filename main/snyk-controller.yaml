@@ -23,4 +23,4 @@ spec:
               name: snyk-token
               key: token
         ports:
-        - containerPort: 8080
+        - containerPort: 8080 #
