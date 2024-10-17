@@ -15,7 +15,7 @@ spec:
       serviceAccountName: snyk-monitor
       containers:
       - name: snyk-monitor
-        image: snyk/kubernetes-monitor:latest
+        image: snyk/kubernetes-monitor
         env:
         - name: SNYK_TOKEN
           valueFrom:
